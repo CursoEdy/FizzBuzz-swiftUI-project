@@ -10,16 +10,21 @@ import SwiftUI
 struct AboutView: View {
     var body: some View {
         ZStack {
-            Color.blue.opacity(0.5).ignoresSafeArea()
+            BackgroundImageView()
+                .opacity(0.3)
             
-            Text("""
-                Fizz buzz é um jogo de palavras em grupo para crianças que as ensina sobre divisão. Os jogadores se revezam para contar incrementalmente, substituindo qualquer número divisível por três pela palavra "fizz", e qualquer número divisível por cinco pela palavra "buzz", e qualquer número divisível por três e cinco pela palavra "fizzbuzz".
-            """)
-            .font(.title)
-            .fontWeight(.semibold)
-            .multilineTextAlignment(.leading)
-            .minimumScaleFactor(0.1)
-            .padding()
+            VStack {
+                Text("""
+                    Fizz buzz é um jogo de palavras em grupo para crianças que as ensina sobre divisão. Os jogadores se revezam para contar incrementalmente, substituindo qualquer número divisível por três pela palavra "fizz", e qualquer número divisível por cinco pela palavra "buzz", e qualquer número divisível por três e cinco pela palavra "fizzbuzz".
+                """)
+                .font(.title)
+                .fontWeight(.semibold)
+                .multilineTextAlignment(.leading)
+                .minimumScaleFactor(0.1)
+                .padding()
+                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.8)
+                .padding()
+            }
             
             
         }

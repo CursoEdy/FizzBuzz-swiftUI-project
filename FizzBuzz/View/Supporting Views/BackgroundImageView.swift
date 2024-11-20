@@ -39,6 +39,8 @@ struct BackgroundImageView: View {
     }
 }
 
-#Preview {
-    BackgroundImageView()
+struct BackgroundImageView_Previews: PreviewProvider {
+    static var previews: some View {
+        BackgroundImageView()
+    }
 }

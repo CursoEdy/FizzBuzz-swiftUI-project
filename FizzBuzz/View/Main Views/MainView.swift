@@ -11,7 +11,7 @@ struct MainView: View {
     var body: some View {
         TabView {
             
-            BackgroundText(text: "FizzBuzzView", color: .blue)
+            FizzBuzzView()
                 .tabItem {
                     Label(
                         "FizzBuzz",
@@ -19,7 +19,7 @@ struct MainView: View {
                     )
                 }
             
-            BackgroundText(text: "CodeCreatorView", color: .red)
+            CodeCreatorView()
                 .tabItem {
                     Label(
                         "Code",
