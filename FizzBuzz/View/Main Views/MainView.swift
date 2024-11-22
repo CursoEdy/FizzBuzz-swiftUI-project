@@ -27,7 +27,6 @@ struct MainView: View {
                     )
                 }
             
-//            BackgroundText(text: "AboutView", color: .green)
             AboutView()
                 .tabItem {Label(
                     "About",
