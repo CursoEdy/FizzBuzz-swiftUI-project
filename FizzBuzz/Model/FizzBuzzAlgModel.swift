@@ -13,7 +13,7 @@ struct FizzBuzzAlgModel: Identifiable {
     let name: String
     var commentCode: (String) -> String = {
         code in
-        return "\\ \(code)"
+        return "\\\\ \(code)"
     }
     var versionNumber: Double? = nil
     var imports: String = ""
