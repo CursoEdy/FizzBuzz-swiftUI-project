@@ -16,11 +16,11 @@ class FizzBuzzAlgViewModel: ObservableObject {
                 name: "Swift",
                 maxConstDef: "let MAX = 100",
                 loopWrapper: { code in
-                    """
-                    for i in 1...MAX {
+                """
+                for i in 1...MAX {
                     \(code)
-                    }
-"""
+                }
+                """
                 },
                 printString: { str in
                     #"Print("\#(str)")"#
@@ -31,7 +31,7 @@ class FizzBuzzAlgViewModel: ObservableObject {
                 ifStatement: { logic, code in
                 """
                 if \(logic) {
-                    \(code)
+                    \(code.indent())
                 }
                 """
                 },
@@ -78,7 +78,7 @@ class FizzBuzzAlgViewModel: ObservableObject {
                 ifStatement: { logic, code in
                 """
                 if (\(logic)) {
-                    \(code)
+                    \(code.indent())
                 }
                 """
                 },

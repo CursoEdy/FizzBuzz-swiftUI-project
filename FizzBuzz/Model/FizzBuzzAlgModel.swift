@@ -11,7 +11,7 @@ struct FizzBuzzAlgModel: Identifiable {
     let id = UUID()
     
     let name: String
-    var commentCodse: (String) -> String = {
+    var commentCode: (String) -> String = {
         code in
         return "\\ \(code)"
     }
@@ -33,6 +33,41 @@ struct FizzBuzzAlgModel: Identifiable {
     let elseStatement: (String) -> String
     
     var actualFizzBuzzCode: String {
-        "Fizzbuzz in \(name)"
+        let mod3 = "i \(moduloSymbol) 3 \(equality) 0"
+        let codFizz = printString("Fizz")
+        
+        let mod5 = "i \(moduloSymbol) 5 \(equality) 0"
+        let codBuzz = printString("Buzz")
+        
+        let modFizzBuzz = "i \(moduloSymbol) 3 \(equality) 0 && i \(moduloSymbol) 5 \(equality) 0"
+        let codFizzBuzz = printString("FizzBuzz")
+        
+        let printInt = printInt()
+        
+        let codeInLoop = """
+            \(ifStatement(modFizzBuzz, codFizzBuzz))
+            \(elseifStatement(mod3, codFizz.indent()))
+            \(elseifStatement(mod5, codBuzz.indent()))
+            \(elseStatement(printInt.indent()))
+        """
+        
+        let mainCode = """
+            \(maxConstDef)
+            
+            \(loopWrapper(codeInLoop))
+        """
+        
+        var versionString = ""
+        
+        if let versionNumber = versionNumber {
+            versionString = "Implementation version \(versionNumber)"
+        }
+        
+        return """
+            \(commentCode("FizzBuzz \(versionString) is implemented in the \(name) programming language."))
+         \(imports)
+        \(boilerWrapper(mainCode))
+        """
+        
     }
 }
